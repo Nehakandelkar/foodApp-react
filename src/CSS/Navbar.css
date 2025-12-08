@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 100px;
+  background-color: #009b91;
+  color: white;
+  font-family: Arial, sans-serif;
+  height: 70px;
+}
+
+.navbar-title {
+    font-family: 'Style Script', cursive;
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #f39c12;
+}
+
+
+
+/* Search bar container inside navbar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;  /* light grey background */
+  border-radius: 25px;
+  padding: 6px 14px;
+  width: 250px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  width: 60%;
+}
+
+.search-bar:focus-within {
+  /* background: #fff;
+  border-color: #ccc; */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field */
+.search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 14px;
+  padding: 6px;
+  color: #333;
+}
+
+/* Placeholder style */
+.search-input::placeholder {
+  color: #888;
+  font-size: 13px;
+}
+
+/* Icon styling */
+.search-icon {
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  border: none;
+}
+
+.search-icon:hover {
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+/* ===== OVERLAY ANIMATION ===== */
+@keyframes fadeOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== MODAL ANIMATION (fade + slight slide) ===== */
+@keyframes fadeSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== OVERLAY ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOverlay 0.25s ease-out;
+}
+
+/* ===== MODAL CONTAINER ===== */
+.modal-container {
+    padding: 15px;
+    background: white;
+    width: 40%;
+    border-radius: 8px;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeSlideDown 0.28s ease-out;
+}
+
+/* ===== HEADER ===== */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header-row {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== TITLE ===== */
+.modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    align-self: left;
+}
+
+/* ===== CLOSE ICON ===== */
+.close-icon {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ===== FORM FIELD TITLE ===== */
+.input-field-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* ===== GENERIC INPUT FIELD WRAPPER ===== */
+.input-field {
+    width: 100%;
+    margin-bottom: 16px;
+}
