@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+
 /* ===== OVERLAY ANIMATION ===== */
 @keyframes fadeOverlay {
     from { opacity: 0; }
@@ -8,11 +13,11 @@
 @keyframes fadeSlideDown {
     0% {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-10px) scale(0.98);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -20,7 +25,8 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,13 +36,17 @@
 
 /* ===== MODAL CONTAINER ===== */
 .modal-container {
-    padding: 15px;
-    background: white;
+    padding: 20px 25px;
+    background: #fff;
     width: 40%;
-    border-radius: 8px;
-    align-items: center;
-    z-index: 10000;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     animation: fadeSlideDown 0.28s ease-out;
+    transition: transform 0.2s ease;
+}
+
+.modal-container:hover {
+    transform: translateY(-2px);
 }
 
 /* ===== HEADER ===== */
@@ -44,39 +54,127 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
+    padding-bottom: 14px;
     border-bottom: 1px solid #eee;
 }
 
-.modal-header-row {
-    padding: 16px;
-    border-bottom: 1px solid #eee;
-}
-
-/* ===== TITLE ===== */
 .modal-title {
-    font-size: 18px;
-    font-weight: bold;
-    align-self: left;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 0.3px;
 }
 
 /* ===== CLOSE ICON ===== */
 .close-icon {
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
+    transition: 0.2s ease;
 }
 
-/* ===== FORM FIELD TITLE ===== */
+.close-icon:hover {
+    transform: scale(1.2);
+    color: #444;
+}
+
+/* ===== BODY ===== */
+.modal-body {
+    padding: 18px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== FORM FIELD ===== */
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+/* Label styling */
 .input-field-title {
     font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    color: #333;
+    font-weight: 600;
+    color: #111;
 }
 
-/* ===== GENERIC INPUT FIELD WRAPPER ===== */
-.input-field {
+/* ===== PRETTY INPUT FIELDS ===== */
+.login-input {
     width: 100%;
-    margin-bottom: 16px;
+    padding: 12px 14px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 15px;
+    transition: 0.25s ease;
+    letter-spacing: 0.3px;
+    display: block;
+}
+
+.login-input:hover {
+    border-color: #333;
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: #000;
+    box-shadow: 0 0 0 3px #00000020;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+/* ===== FOOTER (BUTTON AREA) ===== */
+.modal-footer {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;   /* ⭐ THIS stacks the elements */
+    gap: 10px;                /* space between button & text */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal-footer button {
+    width: 100%;
+    padding: 12px;
+    background: #009b91;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.modal-footer button:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+/* ===== LINK STYLE ===== */
+.modal-link {
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.modal-link:hover {
+    text-decoration: underline;
+}
+
+.link-btn{
+    color: blue;
+    cursor: pointer;
 }

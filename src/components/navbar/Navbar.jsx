@@ -10,6 +10,9 @@ export default function Navbar() {
   function handleLoginClick() {
       dispatch(openModal("login"));
   }
+  function handleSignUpClick() {
+      dispatch(openModal("signup"));
+  }
 
 return(
     <>
@@ -20,7 +23,7 @@ return(
 
         <div className="navbar-actions">
           <div className="nav-item" onClick={handleLoginClick} >Login</div>
-          <div className="nav-item" onClick={handleLoginClick} >SignUp</div>
+          <div className="nav-item" onClick={handleSignUpClick} >SignUp</div>
         </div>
       </div>
     </>

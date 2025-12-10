@@ -1,11 +1,11 @@
 import { Modal } from "../genericComponents/Modal";
 import "../../CSS/Modal.css";
-import { LoginModalBody } from "./LoginModalBody";
+import { SignUpModalBody } from "./SignUpModalBody";
 // import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { openModal, closeModal } from "../../store/slices/modalSlice";
 
-export function LoginModal() {
+export function SignUpModal() {
   const dispatch = useDispatch();
 
   const handleNext = () => {
@@ -13,22 +13,22 @@ export function LoginModal() {
   };
 
   const handleRedirect = () => {
-    dispatch(openModal("signup"));
+    dispatch(openModal("login"));
   }
 
   return (
     <Modal
-      title="Login"
-      body={<LoginModalBody />}
+      title="Sign Up"
+      body={<SignUpModalBody />}
       footer={
-      <>
-      <button onClick={handleNext}> Next</button>
-      <div>
-        Don't have an account? Sign up 
-        <span className="link-btn" onClick={handleRedirect}> here</span>
-
-      </div>
-      </>
+        <>
+        <button onClick={handleNext}> Next</button>
+        <div>
+          Already have an account? Login 
+          <span className="link-btn" onClick={() => dispatch(openModal("login"))}> here</span>
+        </div>
+        </>
+      
       
     }
       onClose={() => dispatch(closeModal())}

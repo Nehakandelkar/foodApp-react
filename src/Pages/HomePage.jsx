@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import '../CSS/Home.css';
 import { LoginModal } from '../components/auth/LoginModal';
 import { DetailsModal } from '../components/auth/DetailsModal';
+import { SignUpModal } from '../components/auth/SignUpModal';
 
 export function HomePage() {
   const {isOpen, modalType} = useSelector((state) => state.modal);
@@ -19,7 +20,7 @@ export function HomePage() {
 
       </div>
         {isOpen && modalType === "login" && <LoginModal />}
-        {isOpen && modalType === "details" && <DetailsModal />}
+        {isOpen && modalType === "signup" && <SignUpModal />}
 
     </>
   );
